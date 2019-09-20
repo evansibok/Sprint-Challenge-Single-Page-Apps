@@ -3,6 +3,7 @@ import { NavLink, Route } from "react-router-dom";
 import WelcomePage from "./WelcomePage";
 import CharacterList from "./CharacterList";
 import styled from "styled-components";
+import SearchForm from "./SearchForm";
 
 const NavStyle = styled.nav`
   display: flex;
@@ -18,7 +19,7 @@ const NavStyle = styled.nav`
 `;
 
 export default function TabNav() {
-  
+
   return (
     <div>
       <NavStyle>
@@ -28,7 +29,7 @@ export default function TabNav() {
         <NavLink className="newStyle" to="/characters">
           Characters
         </NavLink>
-        <input className="newStyle" type="text" placeholder="Search..." />
+        <SearchForm />
       </NavStyle>
 
       <Route exact path="/" component={WelcomePage} />
