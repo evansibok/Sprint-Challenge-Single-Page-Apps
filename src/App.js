@@ -2,18 +2,21 @@ import React, { useState, useEffect } from "react";
 import Header from "./components/Header.js";
 import TabNav from "./components/TabNav";
 import axios from "axios";
+import CharacterList from './components/CharacterList';
 
 
 export default function App() {
 
-  const charApi = "https://rickandmortyapi.com/api/character/";
+  const fakeData = "https://rickandmortyapi.com/api/character/";
+
+  // const charApi = "http://rickandmortyapi.com/api/character/";
   const [ character, setCharacter ] = useState([]);
 
   useEffect(() => {
 
-    axios.get(charApi)
+    axios.get(fakeData)
       .then(res => {
-        setCharacter(res.data.results)
+        setCharacter(res.data.results);
       })
       .catch(err => {
         return err
@@ -24,6 +27,9 @@ export default function App() {
     <main>
       <Header />
       <TabNav />
+      <CharacterList 
+        character={character}
+      />
     </main>
   );
 }
