@@ -6,7 +6,7 @@ const CardStyle = styled.div`
   border: 0.1em solid #8a8a8a;
   width: 310px;
   height: auto;
-  margin: 1em;
+  margin: 2em;
 `;
 
 const ImageDiv = styled.div`
