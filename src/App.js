@@ -7,18 +7,19 @@ import CharacterList from './components/CharacterList';
 
 export default function App() {
 
-  const fakeData = "https://rickandmortyapi.com/api/character/";
+  const charApi = "http://rickandmortyapi.com/api/character/";
 
-  // const charApi = "http://rickandmortyapi.com/api/character/";
   const [ character, setCharacter ] = useState([]);
 
   useEffect(() => {
 
-    axios.get(fakeData)
+    axios.get(charApi)
       .then(res => {
+        // debugger
         setCharacter(res.data.results);
       })
       .catch(err => {
+        // debugger
         return err
       })
   }, []);

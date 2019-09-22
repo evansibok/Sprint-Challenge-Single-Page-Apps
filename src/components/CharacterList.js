@@ -10,6 +10,10 @@ const ParentContainer = styled.section`
 `;
 
 function CharacterList({ character }) {
+  // debugger
+  if(!character) { 
+    return <div>Not here!</div> 
+  }
   // TODO: Add useState to track data from useEffect
 
   // useEffect(() => {
@@ -19,18 +23,20 @@ function CharacterList({ character }) {
 
   return (
     <ParentContainer className="character-list">
-      {character.map(char => (
-        <CharacterCard
-          key={char.id}
-          name={char.name}
-          species={char.species}
-          gender={char.gender}
-          status={char.status}
-          origin={char.origin.name}
-          episode={char.episode}
-          image={char.image}
-        />
-      ))}
+      <>
+        {character || character.map(char => {
+            return <CharacterCard
+            key={char.id}
+            name={char.name}
+            species={char.species}
+            gender={char.gender}
+            status={char.status}
+            origin={char.origin.name}
+            episode={char.episode}
+            image={char.image}
+          />
+        })}
+      </>
     </ParentContainer>
   );
 }

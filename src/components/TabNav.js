@@ -33,6 +33,7 @@ export default function TabNav() {
       </NavStyle>
 
       <Route exact path="/" component={WelcomePage} />
+      <Route path="/characters" component={CharacterList} />
     </div>
   );
 }

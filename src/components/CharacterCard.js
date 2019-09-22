@@ -50,7 +50,7 @@ function CharacterCard({ id, name, species, gender, status, origin, episode, ima
           <h5>Episodes: {episode.length}</h5>
         </div>
       </TextCon>
-    </CardStyle>
+    </CardStyle> 
   )
 }
 
