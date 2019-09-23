@@ -24,7 +24,7 @@ function CharacterList({ character }) {
   return (
     <ParentContainer className="character-list">
       <>
-        {character || character.map(char => {
+        {character && character.map(char => {
             return <CharacterCard
             key={char.id}
             name={char.name}
