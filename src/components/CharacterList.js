@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CharacterCard from "./CharacterCard";
 import styled from "styled-components";
 
@@ -11,19 +11,19 @@ const ParentContainer = styled.section`
 
 function CharacterList({ character }) {
   // debugger
-  if(!character) { 
-    return <div>Not here!</div> 
-  }
+  
   // TODO: Add useState to track data from useEffect
 
-  // useEffect(() => {
-  //   // TODO: Add API Request here - must run in `useEffect`
-  //   //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
-  // }, []);
+  useEffect(() => {
+    // TODO: Add API Request here - must run in `useEffect`
+    //  Important: verify the 2nd `useEffect` parameter: the dependancies array!
+    if (!character) {
+      return <div>Not here!</div>
+    }
+  }, [character]);
 
   return (
     <ParentContainer className="character-list">
-      <>
         {character && character.map(char => {
             return <CharacterCard
             key={char.id}
@@ -36,7 +36,6 @@ function CharacterList({ character }) {
             image={char.image}
           />
         })}
-      </>
     </ParentContainer>
   );
 }
