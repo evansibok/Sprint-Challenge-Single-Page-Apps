@@ -1,7 +1,6 @@
 import React from "react";
 import { NavLink, Route } from "react-router-dom";
 import WelcomePage from "./WelcomePage";
-import CharacterList from "./CharacterList";
 import styled from "styled-components";
 import SearchForm from "./SearchForm";
 
@@ -31,9 +30,7 @@ export default function TabNav() {
         </NavLink>
         <SearchForm />
       </NavStyle>
-
       <Route exact path="/" component={WelcomePage} />
-      <Route path="/characters" component={CharacterList} />
     </div>
   );
 }
