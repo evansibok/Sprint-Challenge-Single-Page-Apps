@@ -29,10 +29,11 @@ export default function App() {
     <main>
       <Header />
       <TabNav />
-      <CharacterList 
-        character={character}
+      <Route exact path="/characters" 
+      render={
+        props => <CharacterList {...props} character={character} />
+      } 
       />
-      <Route exact path="/characters" component={CharacterList} />      
     </main>
   );
 }
