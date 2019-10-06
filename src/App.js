@@ -10,7 +10,8 @@ export default function App() {
 
   const charApi = "https://rickandmortyapi.com/api/character/";
 
-  const [ character, setCharacter ] = useState([]);
+  const [character, setCharacter] = useState([]);
+  const [ searchValue, setSearchValue ] = useState("");
 
   useEffect(() => {
 
@@ -25,13 +26,24 @@ export default function App() {
       })
   }, []);
 
+  const handleChange = e => {
+    setSearchValue(e.target.value);
+  }
+
+  const filteredCharacters = character.filter(char => char.name.toLowerCase().includes(searchValue.toLowerCase()))
+
   return (
     <main>
       <Header />
+      <section className="search-form">
+        <input className="newStyle" type="search" placeholder="Search..." 
+          onChange={e => handleChange(e)}
+        />
+      </section>
       <TabNav />
       <Route exact path="/characters" 
       render={
-        props => <CharacterList {...props} character={character} />
+        props => <CharacterList {...props} character={filteredCharacters} />
       } 
       />
     </main>

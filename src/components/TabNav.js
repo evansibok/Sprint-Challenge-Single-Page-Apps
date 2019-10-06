@@ -28,7 +28,7 @@ export default function TabNav() {
         <NavLink className="newStyle" to="/characters">
           Characters
         </NavLink>
-        <SearchForm />
+        {/* <SearchForm /> */}
       </NavStyle>
       <Route exact path="/" component={WelcomePage} />
     </div>
