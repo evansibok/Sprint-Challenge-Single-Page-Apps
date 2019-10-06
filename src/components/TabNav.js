@@ -17,7 +17,7 @@ const NavStyle = styled.nav`
   }
 `;
 
-export default function TabNav() {
+export default function TabNav({ handleChange }) {
 
   return (
     <div>
@@ -28,7 +28,7 @@ export default function TabNav() {
         <NavLink className="newStyle" to="/characters">
           Characters
         </NavLink>
-        {/* <SearchForm /> */}
+        <SearchForm handleChange={handleChange} placeholder="Search..."/>
       </NavStyle>
       <Route exact path="/" component={WelcomePage} />
     </div>

@@ -35,12 +35,7 @@ export default function App() {
   return (
     <main>
       <Header />
-      <section className="search-form">
-        <input className="newStyle" type="search" placeholder="Search..." 
-          onChange={e => handleChange(e)}
-        />
-      </section>
-      <TabNav />
+      <TabNav handleChange={handleChange} />
       <Route exact path="/characters" 
       render={
         props => <CharacterList {...props} character={filteredCharacters} />
