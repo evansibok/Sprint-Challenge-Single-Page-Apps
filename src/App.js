@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Route } from "react-router-dom";
+import axios from "axios";
+
 import Header from "./components/Header.js";
 import TabNav from "./components/TabNav";
-import axios from "axios";
 import CharacterList from './components/CharacterList';
-
+import { useLocalStorage } from './components/hooks/useLocalStorage'
 
 export default function App() {
 
   const charApi = "https://rickandmortyapi.com/api/character/";
 
   const [character, setCharacter] = useState([]);
-  const [ searchValue, setSearchValue ] = useState("");
+  const [ searchValue, setSearchValue ] = useLocalStorage("");
 
   useEffect(() => {
 

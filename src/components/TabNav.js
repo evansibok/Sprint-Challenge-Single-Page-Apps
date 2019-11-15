@@ -28,7 +28,7 @@ export default function TabNav({ handleChange }) {
         <NavLink className="newStyle" to="/characters">
           Characters
         </NavLink>
-        <SearchForm handleChange={handleChange} placeholder="Search..."/>
+        <SearchForm handleChange={handleChange} placeholder="Search by Name"/>
       </NavStyle>
       <Route exact path="/" component={WelcomePage} />
     </div>
